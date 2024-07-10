@@ -20,6 +20,17 @@ final class ContentViewModel: ObservableObject {
                              !meal.strMealThumb.isEmpty &&
                              !meal.idMeal.isEmpty
                   }
+                .map { meal -> Dessert in
+                    let capitalizedStrMeal = meal.strMeal
+                        .lowercased()
+                        .split(separator: " ")
+                        .map { $0.capitalized }
+                        .joined(separator: " ")
+                    return Dessert(id: meal.id,
+                                   strMeal: capitalizedStrMeal,
+                                   strMealThumb: meal.strMealThumb,
+                                   idMeal: meal.idMeal)
+                }
                   .sorted { $0.strMeal < $1.strMeal }
             DispatchQueue.main.async {
                 self.desserts = mealsResponseSortedAlphabetically
