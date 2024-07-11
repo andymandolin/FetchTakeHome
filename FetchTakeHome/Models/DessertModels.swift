@@ -31,12 +31,10 @@ class Dessert: Decodable, Identifiable, Hashable {
         self.idMeal = idMeal
     }
     
-    // Hashable conformance
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
     
-    // Equatable conformance for Hashable
     static func == (lhs: Dessert, rhs: Dessert) -> Bool {
         return lhs.id == rhs.id
     }

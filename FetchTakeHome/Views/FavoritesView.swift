@@ -3,13 +3,13 @@ import SwiftData
 
 struct BottomSheetView: View {
     @Environment(\.modelContext) private var context
-    @Query var myTypeArray: [FavoriteDessertIds]
+    @Query var favoriteDessertIds: [FavoriteDessertIds]
     @Binding var isPresented: Bool
     @Binding var selectedDessert: Dessert?
-    @StateObject private var viewModel = ContentViewModel()
+    @StateObject private var viewModel = FavoritesViewModel()
     
-    private var reducedDesserts: [Dessert] {
-        let favoriteIdsSet = Set(myTypeArray.flatMap { $0.id })
+    private var filteredFavoritedDesserts: [Dessert] {
+        let favoriteIdsSet = Set(favoriteDessertIds.flatMap { $0.id })
         return viewModel.desserts.filter { favoriteIdsSet.contains($0.idMeal) }
     }
     
@@ -22,7 +22,7 @@ struct BottomSheetView: View {
                 .foregroundColor(Colors.label)
                 .padding()
             LazyVGrid(columns: columns, spacing: 16) {
-                ForEach(reducedDesserts) { dessert in
+                ForEach(filteredFavoritedDesserts) { dessert in
                     FavoritesCellView(imageURL: URL(string: dessert.strMealThumb))
                         .aspectRatio(1.0, contentMode: .fit)
                         .onTapGesture {
