@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0F026ECD2C3A182C00DC0685 /* ContentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F026ECC2C3A182C00DC0685 /* ContentViewModelTests.swift */; };
+		0F7DFA222C3F8AC500B2CEBA /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7DFA212C3F8AC500B2CEBA /* FavoritesViewModel.swift */; };
+		0FD1FAFE2C3F741E005624BF /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD1FAFD2C3F741E005624BF /* FavoritesView.swift */; };
 		0FDDC33C2C34F414000DF9CF /* FetchTakeHomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDDC33B2C34F414000DF9CF /* FetchTakeHomeApp.swift */; };
 		0FDDC33E2C34F414000DF9CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDDC33D2C34F414000DF9CF /* ContentView.swift */; };
 		0FDDC3402C34F416000DF9CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FDDC33F2C34F416000DF9CF /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 		0FDDC37A2C34F537000DF9CF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDDC3792C34F537000DF9CF /* Colors.swift */; };
 		0FDDC37C2C34F542000DF9CF /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDDC37B2C34F542000DF9CF /* Fonts.swift */; };
 		0FDDC3812C35AF34000DF9CF /* MockNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDDC3802C35AF34000DF9CF /* MockNetworking.swift */; };
+		0FF07CCB2C3F78E7004D98CF /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF07CCA2C3F78E7004D98CF /* Favorites.swift */; };
+		0FF07CCD2C3F79C3004D98CF /* FavoritesCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF07CCC2C3F79C3004D98CF /* FavoritesCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,17 +38,12 @@
 			remoteGlobalIDString = 0FDDC3372C34F414000DF9CF;
 			remoteInfo = FetchTakeHome;
 		};
-		0FDDC3532C34F416000DF9CF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0FDDC3302C34F414000DF9CF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0FDDC3372C34F414000DF9CF;
-			remoteInfo = FetchTakeHome;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0F026ECC2C3A182C00DC0685 /* ContentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModelTests.swift; sourceTree = "<group>"; };
+		0F7DFA212C3F8AC500B2CEBA /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		0FD1FAFD2C3F741E005624BF /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		0FDDC3382C34F414000DF9CF /* FetchTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FDDC33B2C34F414000DF9CF /* FetchTakeHomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTakeHomeApp.swift; sourceTree = "<group>"; };
 		0FDDC33D2C34F414000DF9CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +62,8 @@
 		0FDDC3792C34F537000DF9CF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0FDDC37B2C34F542000DF9CF /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		0FDDC3802C35AF34000DF9CF /* MockNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworking.swift; sourceTree = "<group>"; };
+		0FF07CCA2C3F78E7004D98CF /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		0FF07CCC2C3F79C3004D98CF /* FavoritesCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,13 +75,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0FDDC3452C34F416000DF9CF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0FDDC34F2C34F416000DF9CF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -154,6 +148,7 @@
 			children = (
 				0FDDC3682C34F474000DF9CF /* DessertModels.swift */,
 				0FDDC36A2C34F483000DF9CF /* RecipeModels.swift */,
+				0FF07CCA2C3F78E7004D98CF /* Favorites.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +158,7 @@
 			children = (
 				0FDDC36D2C34F4A8000DF9CF /* ContentViewModel.swift */,
 				0FDDC36F2C34F4C3000DF9CF /* DetailViewModel.swift */,
+				0F7DFA212C3F8AC500B2CEBA /* FavoritesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -172,6 +168,8 @@
 			children = (
 				0FDDC33D2C34F414000DF9CF /* ContentView.swift */,
 				0FDDC3722C34F4ED000DF9CF /* DetailView.swift */,
+				0FD1FAFD2C3F741E005624BF /* FavoritesView.swift */,
+				0FF07CCC2C3F79C3004D98CF /* FavoritesCellView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,10 +248,6 @@
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 0FDDC3372C34F414000DF9CF;
 					};
-					0FDDC3512C34F416000DF9CF = {
-						CreatedOnToolsVersion = 15.4;
-						TestTargetID = 0FDDC3372C34F414000DF9CF;
-					};
 				};
 			};
 			buildConfigurationList = 0FDDC3332C34F414000DF9CF /* Build configuration list for PBXProject "FetchTakeHome" */;
@@ -292,13 +286,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0FDDC3502C34F416000DF9CF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -306,10 +293,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FF07CCD2C3F79C3004D98CF /* FavoritesCellView.swift in Sources */,
 				0FDDC3692C34F474000DF9CF /* DessertModels.swift in Sources */,
 				0FDDC37A2C34F537000DF9CF /* Colors.swift in Sources */,
 				0FDDC3732C34F4ED000DF9CF /* DetailView.swift in Sources */,
+				0FF07CCB2C3F78E7004D98CF /* Favorites.swift in Sources */,
 				0FDDC3662C34F459000DF9CF /* Networking.swift in Sources */,
+				0FD1FAFE2C3F741E005624BF /* FavoritesView.swift in Sources */,
+				0F7DFA222C3F8AC500B2CEBA /* FavoritesViewModel.swift in Sources */,
 				0FDDC37C2C34F542000DF9CF /* Fonts.swift in Sources */,
 				0FDDC3812C35AF34000DF9CF /* MockNetworking.swift in Sources */,
 				0FDDC3762C34F51C000DF9CF /* APIEndpoints.swift in Sources */,
@@ -338,11 +329,6 @@
 			isa = PBXTargetDependency;
 			target = 0FDDC3372C34F414000DF9CF /* FetchTakeHome */;
 			targetProxy = 0FDDC3492C34F416000DF9CF /* PBXContainerItemProxy */;
-		};
-		0FDDC3542C34F416000DF9CF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0FDDC3372C34F414000DF9CF /* FetchTakeHome */;
-			targetProxy = 0FDDC3532C34F416000DF9CF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

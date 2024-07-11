@@ -3,6 +3,8 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var viewModel = ContentViewModel()
     @State private var selectedDessert: Dessert?
+    @State private var isBottomSheetPresented = false
+    @State private var navigateToDetail = false
     
     var body: some View {
         NavigationStack {
@@ -39,10 +41,32 @@ struct ContentView: View {
                 .alert(item: $viewModel.errorMessage) { errorMessage in
                     Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("OK")))
                 }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(action: {
+                            isBottomSheetPresented = true
+                        }) {
+                            Image(systemName: "heart.circle")
+                        }
+                    }
+                }
+            }
+            .navigationDestination(isPresented: $navigateToDetail) {
+                if let dessert = selectedDessert {
+                    DetailView(dessert: dessert)
+                }
             }
         }
         .accentColor(Colors.label)
         .scrollContentBackground(.hidden)
+        .sheet(isPresented: $isBottomSheetPresented) {
+            BottomSheetView(isPresented: $isBottomSheetPresented, selectedDessert: $selectedDessert)
+                .onDisappear {
+                    if selectedDessert != nil {
+                        navigateToDetail = true
+                    }
+                }
+        }
     }
 }
 
@@ -50,6 +74,6 @@ extension String: Identifiable {
     public var id: String { self }
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView()
+//}

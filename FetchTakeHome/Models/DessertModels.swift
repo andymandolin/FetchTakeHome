@@ -1,10 +1,10 @@
 import Foundation
 
-struct Desserts: Codable, Equatable {
+struct Desserts: Decodable, Equatable {
     let meals: [Dessert]
 }
 
-struct Dessert: Codable, Identifiable, Hashable {
+class Dessert: Decodable, Identifiable, Hashable {
     var id: String
     let strMeal: String
     let strMealThumb: String
@@ -16,12 +16,12 @@ struct Dessert: Codable, Identifiable, Hashable {
         case idMeal
     }
     
-    init(from decoder: Decoder) throws {
+    required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.strMeal = try container.decode(String.self, forKey: .strMeal)
         self.strMealThumb = try container.decode(String.self, forKey: .strMealThumb)
         self.idMeal = try container.decode(String.self, forKey: .idMeal)
-        self.id = idMeal
+        self.id = try container.decode(String.self, forKey: .idMeal)
     }
     
     init(id: String, strMeal: String, strMealThumb: String, idMeal: String) {
@@ -29,5 +29,15 @@ struct Dessert: Codable, Identifiable, Hashable {
         self.strMeal = strMeal
         self.strMealThumb = strMealThumb
         self.idMeal = idMeal
+    }
+    
+    // Hashable conformance
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    // Equatable conformance for Hashable
+    static func == (lhs: Dessert, rhs: Dessert) -> Bool {
+        return lhs.id == rhs.id
     }
 }

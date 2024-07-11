@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 @main
 struct FetchTakeHomeApp: App {
@@ -6,5 +7,6 @@ struct FetchTakeHomeApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: FavoriteDessertIds.self)
     }
 }

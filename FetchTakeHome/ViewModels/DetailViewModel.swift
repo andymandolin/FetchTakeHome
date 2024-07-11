@@ -1,7 +1,5 @@
 import Foundation
 
-import Foundation
-
 final class DetailViewModel: ObservableObject {
     @Published var dessertRecipe: DessertRecipe?
     @Published var errorMessage: String?
